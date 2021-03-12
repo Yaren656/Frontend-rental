@@ -1,1 +1,21 @@
-<p>rental works!</p>
+<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+  <table *ngIf="dataLoaded == true" class="table table-bordered">
+    <thead>
+      <th>Rentals</th>
+      <th>Rent Date</th>
+      <th>Return Date</th>
+    </thead>
+    
+    
+
+      <tr *ngFor="let rentalDto of rentalDtos">
+        <td>{{ rentalDto.brandName }}</td>
+        <td>{{ rentalDto.userName }}</td>
+        <td>{{ rentalDto.Id }}</td>
+
+      </tr>
+    
+  </table>
