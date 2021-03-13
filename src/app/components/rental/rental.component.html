@@ -5,13 +5,14 @@
   <table *ngIf="dataLoaded == true" class="table table-bordered">
     <thead>
       <th>Rentals</th>
-      <th>Rent Date</th>
-      <th>Return Date</th>
+      <th>User Name</th>
+      
     </thead>
+    <tbody>
       <tr *ngFor="let rentalDto of rentalDtos">
         <td>{{ rentalDto.brandName }}</td>
         <td>{{ rentalDto.userName }}</td>
         <td>{{ rentalDto.Id }}</td>
       </tr>
-    
+    </tbody>
   </table>

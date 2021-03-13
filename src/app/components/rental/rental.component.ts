@@ -34,7 +34,6 @@ export class RentalComponent implements OnInit {
   getRentalDetails(){
     this.rentalService.getRentalDetails().subscribe(response=>{
       this.rentalDtos= response.data
-      console.log("test")
       this.dataLoaded = true;
     })
     
