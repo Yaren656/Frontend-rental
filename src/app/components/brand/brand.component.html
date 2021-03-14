@@ -2,7 +2,7 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<table *ngIf="dataLoaded == true" class="table table-bordered">
+<!-- <table *ngIf="dataLoaded == true" class="table table-bordered">
   <thead>
     <th>Brands</th>
   </thead>
@@ -11,4 +11,16 @@
       <td>{{ brand.brandName }}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+<ul class="list-group">
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brands/{{brand.brandId}}"
+    *ngFor="let brand of brands"
+    [class]="getCurrentBrandClass(brand)">
+    {{ brand.brandName }}
+  </li>
+</ul>
+
+<h5 *ngIf="currentBrand">{{currentBrand.brandName}} Seçtiniz </h5>
