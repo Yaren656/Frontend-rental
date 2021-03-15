@@ -10,8 +10,9 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   currentBrand: Brand;
-  constructor(private brandService:BrandService) { }
   dataLoaded = false ;
+  constructor(private brandService:BrandService) { }
+  
 
   ngOnInit(): void {
     this.getBrands();

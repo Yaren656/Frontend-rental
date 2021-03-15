@@ -2,13 +2,15 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<table *ngIf="dataLoaded == true" class="table table-bordered">
-  <thead>
-    <th>Colors</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let color of colors">
-      <td>{{ color.colorName }}</td>
-    </tr>
-  </tbody>
-</table>
+<ul class="list-group">
+  <th>Colors</th>
+  <li
+    (click)="setCurrentColor(color)"
+    routerLink="/cars/color/{{color.colorId}}"
+    *ngFor="let color of colors"
+    [class]="getCurrentColorClass(color)">
+    {{ color.colorName }}
+  </li>
+</ul>
+
+<h5 *ngIf="currentColor"> </h5>
