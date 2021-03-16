@@ -25,4 +25,20 @@ export class ImageComponent implements OnInit {
       this.dataLoaded = true;
     })
   }  
+
+
+  setCurrentImage(image: Image) {
+    this.currentImage = image;
+  }
+
+  getCurrentImageClass(image: Image) {
+    if (image == this.currentImage) 
+    {
+      return 'list-group-item active';
+    } 
+    else 
+    {
+      return 'list-group-item';
+    }
+  }
 }

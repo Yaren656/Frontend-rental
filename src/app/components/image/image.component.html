@@ -1,5 +1,28 @@
-<div *ngFor="let image of images" class="card" style="width: 18rem;"> 
+<!-- <div *ngFor="let image of images" class="card" style="width: 18rem;"> 
   <img src="https://localhost:44330/images/{{image.imagePath}}" class="img-fluid" alt="..."> 
-  <div class="card-body"> <h5 class="card-title">Card title</h5> <p class="card-text">
-    Some quick example text to build on the card title and make up the bulk of the card's content.
+  <div class="card-body"> <h5 class="card-title"></h5> 
+  <h5>
+    <tr>
+      <td>Car Id= {{image.carId}}</td>
+    </tr>
+  </h5> <p class="card-text">
+    Images of the cars.
   </p> <a href="#" class="btn btn-primary">Go To Image</a> </div> </div>
+
+
+
+  <ul class="list-group">
+    <th>Cars</th>
+    <li
+      (click)="setCurrentImage(image)"
+      routerLink="/cars/image/{{image.carId}}"
+      *ngFor="let image of images"
+      [class]="getCurrentImageClass(image)">
+      {{ image.carId }}
+    </li>
+  </ul>
+  <div *ngFor="let image of images" class="card" style="width: 18rem;"> 
+    <img src="https://localhost:44330/images/{{image.imagePath}}" class="img-fluid" alt="..."> 
+    <div class="card-body"> <h5 class="card-title"></h5> 
+  
+  <h5 *ngIf="currentImage"></h5> -->
