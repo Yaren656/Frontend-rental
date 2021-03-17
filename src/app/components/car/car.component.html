@@ -4,12 +4,13 @@
 
 <table *ngIf="dataLoaded == true" class="table table-bordered">
   <thead>
-    <th>Id</th>
-    <th>Description</th>
-    <th>Daily Price</th>
-    <th>Brand Name</th>
-    <th>Color Name</th>
+    <th><font color="#8A75FF">Id</font></th>
+    <th><font color="#8A75FF">Description</font></th>
+    <th><font color="#8A75FF">Daily Price</font></th>
+    <th><font color="#8A75FF">Brand Name</font></th>
+    <th><font color="#8A75FF">Color Name</font></th>
   </thead>
+
   <tbody>
     <tr *ngFor="let carDto of cardtos">
       <td>{{carDto.carId}}</td>
@@ -18,7 +19,7 @@
       <td>{{carDto.brandName}}</td>
       <td>{{carDto.colorName}}</td>
       <td><button type="button" routerLink = "/cardetails/{{carDto.carId}}" 
-      class="btn btn-dark text-center">Ayrıntılar</button>
+      class="btn btn-dark text-center">Details</button>
     </td>
     </tr>
   </tbody>

@@ -2,21 +2,10 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<!-- <table *ngIf="dataLoaded == true" class="table table-bordered">
-  <thead>
-    <th>Brands</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let brand of brands">
-      <td>{{ brand.brandName }}</td>
-    </tr>
-  </tbody>
-</table> -->
-
 <ul class="list-group">
-  <th>Brands</th>
-  <li
-    (click)="setCurrentBrand(brand)"
+  <th><font color="#FF33B8">Brands</font></th>
+  <li [class]="getAllBrandClass()"routerLink="/cars"> All Brands</li>
+  <li (click)="setCurrentBrand(brand)"
     routerLink="/cars/brand/{{brand.brandId}}"
     *ngFor="let brand of brands"
     [class]="getCurrentBrandClass(brand)">
