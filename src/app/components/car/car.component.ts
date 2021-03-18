@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarDto } from 'src/app/models/carDto';
 import { Color } from 'src/app/models/color';
 import { CarService } from 'src/app/services/car.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-car',
@@ -19,7 +21,9 @@ export class CarComponent implements OnInit {
 
   constructor(
     private carService: CarService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private toastrService:ToastrService,
+    private cartService:CartService
   ) {}
 
   ngOnInit(): void {
@@ -64,5 +68,10 @@ export class CarComponent implements OnInit {
       this.cardtos = response.data;
       this.dataLoaded = true;
     });
+  }
+
+  addToCart(cardto:CarDto){
+    this.toastrService.success("Added to Cart", cardto.brandName + " " + cardto.description)
+    this.cartService.addToCart(cardto);
   }
 }
