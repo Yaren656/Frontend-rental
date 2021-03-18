@@ -1,0 +1,4 @@
+<select #markalar class="form-select" aria-label="Default select example" (change)="secildi(markalar.value)">
+    <option selected>Marka Seçiniz</option>
+    <option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</option>
+  </select>

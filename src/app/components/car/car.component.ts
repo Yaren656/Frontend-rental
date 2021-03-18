@@ -18,6 +18,8 @@ export class CarComponent implements OnInit {
   colors : Color []=[];
   dataLoaded = false;
   filterText="";
+  selectedColorId:number;
+  selectedBrandId:number;
 
   constructor(
     private carService: CarService,
@@ -74,4 +76,24 @@ export class CarComponent implements OnInit {
     this.toastrService.success("Added to Cart", cardto.brandName + " " + cardto.description)
     this.cartService.addToCart(cardto);
   }
+
+  getColorId(colorId:number){
+    this.selectedColorId=colorId;
+    console.log("İçeriden gelen değer : " + this.selectedColorId);
+  }
+
+  getBrandId(brandId:number){
+    this.selectedBrandId=brandId;
+    console.log("İçeriden gelen değer(brand) : " + this.selectedBrandId);
+  }
+
+  doFilter(){
+    // if(!this.selectedBrandId || !this.selectedColorId){
+    //   return;
+    // }
+    this.carService.doFilter(this.selectedColorId, this.selectedBrandId).subscribe(response=>{
+      this.cardtos=response.data;
+    })
+  }
+
 }

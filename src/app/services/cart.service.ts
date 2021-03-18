@@ -29,4 +29,13 @@ export class CartService {
     let item:CartItem = CartItems.find((c) => c.cardto.carId === cardto.carId);
     CartItems.splice(CartItems.indexOf(item),1);
   }
+
+  allBrands(){
+
+  }
+
+  allColors(){
+    
+  }
+
 }

@@ -19,6 +19,9 @@ import { CardtoComponent } from './components/cardto/cardto.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { BrandSelectoptionComponent } from './components/brand/brand-selectoption/brand-selectoption.component';
+import { ColorSelectoptionComponent } from './components/color/color-selectoption/color-selectoption.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     VatAddedPipe,
     FilterPipePipe,
     CartSummaryComponent,
+    BrandSelectoptionComponent,
+    ColorSelectoptionComponent,
     
   ],
   imports: [

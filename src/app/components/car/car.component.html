@@ -15,6 +15,16 @@
 <div *ngIf="filterText" class="alert alert-success">
   {{filterText}} Aradınız.
 </div>
+<div class="row">
+  <div class="col-md-10">
+    <app-brand-selectoption (outputValue)="getBrandId($event)"></app-brand-selectoption>
+    <app-color-selectoption (outputValue)="getColorId($event)"></app-color-selectoption>
+  </div>
+  <div class="col-md-2 my-auto">
+    <button class="btn btn-primary" (click)="doFilter()">Filtrele</button>
+  </div>
+</div>
+
 
 <table *ngIf="dataLoaded == true" class="table table-bordered">
   <thead>
@@ -31,8 +41,8 @@
     <tr *ngFor="let carDto of cardtos | filterPipe:filterText">
       <td>{{ carDto.carId }}</td>
       <td>{{ carDto.description }}</td>
-      <td>{{ carDto.dailyPrice | currency }}</td>
-      <td>{{ carDto.dailyPrice | vatAdded: 10 | currency }}</td>
+      <td>{{ carDto.dailyPrice | currency : 'TL' }}</td>
+      <td>{{ carDto.dailyPrice | vatAdded: 10 | currency : 'TL' }}</td>
       <td>{{ carDto.brandName | uppercase }}</td>
       <td>{{ carDto.colorName }}</td>
       <td><button (click)="addToCart(carDto)" class="btn btn-success">Add to Cart</button></td>
@@ -48,3 +58,5 @@
     </tr>
   </tbody>
 </table>
+
+

@@ -12,6 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartSummaryComponent implements OnInit {
 
   cartItems:CartItem[]=[];
+  cardtos:CarDto[]=[];
   
   constructor(private cartService:CartService, private toastrService:ToastrService) { }
 
@@ -26,7 +27,16 @@ export class CartSummaryComponent implements OnInit {
   removeFromCart(cardto:CarDto){
     this.cartService.removeFromCart(cardto);
     this.toastrService.error("Removed from Cart" , cardto.brandName + " " + cardto.description  );
+  }
+
+  allBrands(){
 
   }
+
+  allColors(){
+    
+  }
+
+  
 
 }
