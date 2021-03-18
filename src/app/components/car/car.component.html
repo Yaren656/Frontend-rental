@@ -2,27 +2,47 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<div class="mb-3">
+  <label for="filterText" class="form-label">Search</label>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Arama İfadesi Giriniz"
+  />
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+  {{filterText}} Aradınız.
+</div>
+
 <table *ngIf="dataLoaded == true" class="table table-bordered">
   <thead>
     <th><font color="#8A75FF">Id</font></th>
     <th><font color="#8A75FF">Description</font></th>
     <th><font color="#8A75FF">Daily Price</font></th>
+    <th><font color="#8A75FF">Kdv'li Fiyat</font></th>
     <th><font color="#8A75FF">Brand Name</font></th>
     <th><font color="#8A75FF">Color Name</font></th>
   </thead>
 
   <tbody>
     <tr *ngFor="let carDto of cardtos">
-      <td>{{carDto.carId}}</td>
-      <td>{{carDto.description}}</td>
-      <td>{{carDto.dailyPrice}}</td>
-      <td>{{carDto.brandName}}</td>
-      <td>{{carDto.colorName}}</td>
-      <td><button type="button" routerLink = "/cardetails/{{carDto.carId}}" 
-      class="btn btn-dark text-center">Details</button>
-    </td>
+      <td>{{ carDto.carId }}</td>
+      <td>{{ carDto.description }}</td>
+      <td>{{ carDto.dailyPrice | currency }}</td>
+      <td>{{ carDto.dailyPrice | vatAdded: 10 | currency }}</td>
+      <td>{{ carDto.brandName | uppercase }}</td>
+      <td>{{ carDto.colorName }}</td>
+      <td>
+        <button
+          type="button"
+          routerLink="/cardetails/{{ carDto.carId }}"
+          class="btn btn-dark text-center"
+        >
+          Details
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
-
-

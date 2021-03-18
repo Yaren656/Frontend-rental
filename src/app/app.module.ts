@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { ImageComponent } from './components/image/image.component';
 import { CardtoComponent } from './components/cardto/cardto.component';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { CardtoComponent } from './components/cardto/cardto.component';
     CustomerComponent,
     RentalComponent,
     ImageComponent,
-    CardtoComponent
+    CardtoComponent,
+    VatAddedPipe,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

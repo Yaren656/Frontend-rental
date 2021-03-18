@@ -15,6 +15,7 @@ export class CarComponent implements OnInit {
   cardtos: CarDto[] = [];
   colors : Color []=[];
   dataLoaded = false;
+  filterText="";
 
   constructor(
     private carService: CarService,
