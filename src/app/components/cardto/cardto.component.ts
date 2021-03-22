@@ -34,7 +34,6 @@ export class CardtoComponent implements OnInit {
   getCarDetailsByCarid(carId:number){
     this.cardtoService.getCarDetailsByCarid(carId).subscribe(response=>{
       this.cardto = response.data[0]
-      
     })
   }
 

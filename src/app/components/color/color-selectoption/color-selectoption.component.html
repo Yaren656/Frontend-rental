@@ -1,4 +1,4 @@
 <select #renkler class="form-select mt-2" aria-label="Default select example" (change)="secildi(renkler.value)" >
-    <option selected>Renk Seçiniz</option>
+    <option selected>Choose Color</option>
     <option  *ngFor="let color of colors" [value]="color.colorId">{{color.colorName}}</option>
   </select>

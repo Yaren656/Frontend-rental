@@ -2,10 +2,18 @@
     <img src="https://localhost:44330/images/{{carimages[0].imagePath}}" class="card-img-top" alt="...">
     <div  class="card-body">
       <h5 class="card-title">{{cardto.brandName | uppercase}}</h5>
-      <p class="card-text">Günlük ücret : {{cardto.dailyPrice}} 
-        , Renk: {{cardto.colorName}}
+      <p class="card-text">Daily Price: {{cardto.dailyPrice}} 
+        , Color: {{cardto.colorName}}
       </p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <button
+      type="button"
+      class="btn btn-success"
+      style="position: absolute; bottom: 20px; right: 20px"
+      [routerLink]="['/rentcar',cardto.carId]"
+    >
+      Rent This Car
+    </button>
+      <p class="card-text"><small class="text-muted"></small></p>
     </div>
   </div>
 <div *ngIf="dataLoaded==false" class="spinner-border text-info " role="status">

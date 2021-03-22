@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import {ToastrModule} from 'ngx-toastr'
@@ -21,7 +21,9 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { BrandSelectoptionComponent } from './components/brand/brand-selectoption/brand-selectoption.component';
 import { ColorSelectoptionComponent } from './components/color/color-selectoption/color-selectoption.component';
-
+import { CreditcardComponent } from './components/creditcard/creditcard.component';
+import { RentcarComponent } from './components/rentcar/rentcar.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ColorSelectoptionComponent } from './components/color/color-selectoptio
     CartSummaryComponent,
     BrandSelectoptionComponent,
     ColorSelectoptionComponent,
-    
+    CreditcardComponent,
+    RentcarComponent,
+    CarAddComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ import { ColorSelectoptionComponent } from './components/color/color-selectoptio
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

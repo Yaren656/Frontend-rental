@@ -17,7 +17,6 @@ export class RentalComponent implements OnInit {
   constructor(private rentalService:RentalService) { }
 
   ngOnInit(): void {
-    
     this.getRentalDetails();
   }
 
@@ -34,7 +33,8 @@ export class RentalComponent implements OnInit {
       this.rentalDtos= response.data
       this.dataLoaded = true;
     })
-    
   }
+
+
   
 }

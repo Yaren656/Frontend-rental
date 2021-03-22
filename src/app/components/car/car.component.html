@@ -13,7 +13,7 @@
   />
 </div>
 <div *ngIf="filterText" class="alert alert-success">
-  {{filterText}} Aradınız.
+  You searched for {{filterText}}
 </div>
 <div class="row">
   <div class="col-md-10">
@@ -21,7 +21,7 @@
     <app-color-selectoption (outputValue)="getColorId($event)"></app-color-selectoption>
   </div>
   <div class="col-md-2 my-auto">
-    <button class="btn btn-primary" (click)="doFilter()">Filtrele</button>
+    <button class="btn btn-primary" (click)="doFilter()">Filter</button>
   </div>
 </div>
 
@@ -31,7 +31,7 @@
     <th><font color="#8A75FF">Id</font></th>
     <th><font color="#8A75FF">Description</font></th>
     <th><font color="#8A75FF">Daily Price</font></th>
-    <th><font color="#8A75FF">Kdv'li Fiyat</font></th>
+    <th><font color="#8A75FF">Vat Added Price</font></th>
     <th><font color="#8A75FF">Brand Name</font></th>
     <th><font color="#8A75FF">Color Name</font></th>
     <th><font color="#8A75FF"></font></th>

@@ -1,0 +1,28 @@
+
+<div *ngIf="cardto">
+  <h2>Araba bilgileri</h2>
+  <p>Marka {{cardto.brandName}}</p>
+  <p>Renk {{cardto.colorName}}</p>
+  <p>Günlük ücret {{cardto.dailyPrice}}</p>
+  <p>Açıklama {{cardto.description}}</p>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    Kiralama Başlangıç Tarihi :
+    <input type="date" [min]="today" (input)="getStartDate($event)"/>
+  </div>
+  <div class="col-md-6">
+    Kiralama Bitiş Tarihi :
+    <input [disabled]="!isRentDateSelected" type="date" [min]="endMinDate" (input)="getEndDate($event)"/>
+  </div>
+</div>
+<div class="col-md-6">
+    <p>  Toplam gün: {{totalDay}}</p>
+      <p *ngIf="cardto"> Günlük fiyat : {{cardto.dailyPrice}}</p>
+      <p> Toplam fiyat : <span *ngIf="totalDay"> {{totalDay*cardto.dailyPrice}}</span></p>
+</div>
+<button type="button" (click)="rent()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Kirala
+</button>
+<app-creditcard Rental="rental"></app-creditcard>
+
