@@ -28,4 +28,10 @@ export class FakecardService {
     let newPath = this.apiUrl + "fakecard/update"
     this.httpClient.put(newPath,fakeCard)
   }
+
+  addPayment(fakeCard:FakeCard){
+    let newPath = this.apiUrl + "fakecard/add"
+    return this.httpClient.post<ResponseModel>(newPath,fakeCard);
+
+  }
 }

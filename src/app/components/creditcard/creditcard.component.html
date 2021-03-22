@@ -60,22 +60,22 @@
         <form [formGroup]="creditCardForm">
           <div class="mb-3">
             <label for="isim" class="form-label">Kart üzerindeki isim</label>
-          <input type="text" id="isim" formControlName="nameOnTheCard" placeholder="Kart üzerindeki isim">
+          <input [(ngModel)]="isim" type="text" id="isim" formControlName="nameOnTheCard" placeholder="Kart üzerindeki isim">
         </div>
           <div class="mb-3">
             <label for="Kartnumarası" class="form-label">Kart numarası</label>
-          <input id="Kartnumarası" type="text" formControlName="cardNumber" placeholder="Kart numarası"> 
+          <input [(ngModel)]="kartnumarasi" id="Kartnumarası" type="text" formControlName="cardNumber" placeholder="Kart numarası"> 
         </div>
           <div class="mb-3">
             <label for="cvv" class="form-label">Cvv</label>
-          <input type="text" id="cvv" formControlName="cardCvv" placeholder="Cvv">
+          <input [(ngModel)]="cvv" type="text" id="cvv" formControlName="cardCvv" placeholder="Cvv">
         </div>
           
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Çıkış</button>
-        <button type="button" class="btn btn-primary" (click)="rentACar()">Öde</button>
+        <button type="button" class="btn btn-primary" (click)="addPayment()">Öde</button>
       </div>
     </div>
   </div>

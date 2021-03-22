@@ -17,7 +17,6 @@ export class ImageService {
   }
 
   getImagesByCarid(carId:number):Observable<ListResponseModel<Image>> {
-    console.log("haghsdgahs")
     return this.httpClient.get<ListResponseModel<Image>>(this.apiUrl+"carimages/getbycarid?carid="+carId)
   }
 }
