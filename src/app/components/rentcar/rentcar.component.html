@@ -8,21 +8,21 @@
 </div>
 <div class="row">
   <div class="col-md-6">
-    Kiralama Başlangıç Tarihi :
+    Rent Start Date :
     <input type="date" [min]="today" (input)="getStartDate($event)"/>
   </div>
   <div class="col-md-6">
-    Kiralama Bitiş Tarihi :
+    Rent End Date :
     <input [disabled]="!isRentDateSelected" type="date" [min]="endMinDate" (input)="getEndDate($event)"/>
   </div>
 </div>
 <div class="col-md-6">
-    <p>  Toplam gün: {{totalDay}}</p>
-      <p *ngIf="cardto"> Günlük fiyat : {{cardto.dailyPrice}}</p>
-      <p> Toplam fiyat : <span *ngIf="totalDay"> {{totalDay*cardto.dailyPrice}}</span></p>
+    <p>  Total Day: {{totalDay}}</p>
+      <p *ngIf="cardto"> Daily Price : {{cardto.dailyPrice}}</p>
+      <p> Total Price : <span *ngIf="totalDay"> {{totalDay*cardto.dailyPrice}}</span></p>
 </div>
 <button type="button" (click)="rent()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Kirala
+  Rent
 </button>
-<app-creditcard Rental="rental"></app-creditcard>
+<app-creditcard rental="rental"></app-creditcard>
 

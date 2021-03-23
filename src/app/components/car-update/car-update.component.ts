@@ -7,14 +7,13 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { CarService } from 'src/app/services/car.service';
-
 @Component({
-  selector: 'app-car-add',
-  templateUrl: './car-add.component.html',
-  styleUrls: ['./car-add.component.css'],
+  selector: 'app-car-update',
+  templateUrl: './car-update.component.html',
+  styleUrls: ['./car-update.component.css'],
 })
-export class CarAddComponent implements OnInit {
-  carAddForm: FormGroup;
+export class CarUpdateComponent implements OnInit {
+  carUpdateForm:FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
@@ -22,25 +21,28 @@ export class CarAddComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createCarAddForm();
+    this.createCarUpdateForm();
   }
 
-  createCarAddForm() {
-    this.carAddForm = this.formBuilder.group({
-      carName: ['', Validators.required],
-      brandId: ['', Validators.required],
-      colorId: ['', Validators.required],
-      modelYear: ['', Validators.required],
-      dailyPrice: ['', Validators.required],
+  createCarUpdateForm(){
+    this.carUpdateForm = this.formBuilder.group({
+      // carName:["",Validators.required],
+      brandId:["",Validators.required],
+      colorId:["",Validators.required],
+      modelYear:["",Validators.required],
+      dailyPrice:["",Validators.required],
+      description:["",Validators.required],
+      carId:["",Validators.required]
     });
   }
 
-  add() {
-    if (this.carAddForm.valid) {
-      let carModel = Object.assign({}, this.carAddForm.value);
-      this.carService.add(carModel).subscribe(
+  update() {
+    if (this.carUpdateForm.valid) {
+      let carModel = Object.assign({}, this.carUpdateForm.value);
+      console.log(carModel);
+      this.carService.update(carModel).subscribe(
         (response) => {
-          this.toastrService.success(response.message, 'Başarılı');
+          this.toastrService.success(response.message, 'Güncelleme Başarılı');
         },
         (responseError) => {
           if (responseError.error.Errors.length > 0) {

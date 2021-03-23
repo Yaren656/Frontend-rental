@@ -49,33 +49,65 @@
 </div> -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ödeme Bilgileri</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="creditCardForm">
           <div class="mb-3">
             <label for="isim" class="form-label">Kart üzerindeki isim</label>
-          <input [(ngModel)]="isim" type="text" id="isim" formControlName="nameOnTheCard" placeholder="Kart üzerindeki isim">
-        </div>
+            <input
+              [(ngModel)]="isim"
+              type="text"
+              id="isim"
+              formControlName="nameOnTheCard"
+              placeholder="Kart üzerindeki isim"
+            />
+          </div>
           <div class="mb-3">
             <label for="Kartnumarası" class="form-label">Kart numarası</label>
-          <input [(ngModel)]="kartnumarasi" id="Kartnumarası" type="text" formControlName="cardNumber" placeholder="Kart numarası"> 
-        </div>
+            <input
+              [(ngModel)]="kartnumarasi"
+              id="Kartnumarası"
+              type="text"
+              formControlName="cardNumber"
+              placeholder="Kart numarası"
+            />
+          </div>
           <div class="mb-3">
             <label for="cvv" class="form-label">Cvv</label>
-          <input [(ngModel)]="cvv" type="text" id="cvv" formControlName="cardCvv" placeholder="Cvv">
-        </div>
-          
+            <input
+              [(ngModel)]="cvv"
+              type="text"
+              id="cvv"
+              formControlName="cardCvv"
+              placeholder="Cvv"
+            />
+          </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Çıkış</button>
-        <button type="button" class="btn btn-primary" (click)="addPayment()">Öde</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Exit
+        </button>
+        <button type="button" class="btn btn-primary" (click)="addPayment()">
+          Öde
+        </button>
       </div>
     </div>
   </div>

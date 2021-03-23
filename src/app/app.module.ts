@@ -24,6 +24,11 @@ import { ColorSelectoptionComponent } from './components/color/color-selectoptio
 import { CreditcardComponent } from './components/creditcard/creditcard.component';
 import { RentcarComponent } from './components/rentcar/rentcar.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { ColorListComponent } from './components/color/color-list/color-list.component';
+import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
+import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
+import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,12 @@ import { CarAddComponent } from './components/car-add/car-add.component';
     ColorSelectoptionComponent,
     CreditcardComponent,
     RentcarComponent,
-    CarAddComponent
+    CarAddComponent,
+    CarUpdateComponent,
+    ColorListComponent,
+    ColorUpdateComponent,
+    BrandListComponent,
+    BrandUpdateComponent
   ],
   imports: [
     BrowserModule,

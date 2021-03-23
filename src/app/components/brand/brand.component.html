@@ -4,7 +4,7 @@
 
 <ul class="list-group">
   <th><font color="#FF33B8">Brands</font></th>
-  <li [class]="getAllBrandClass()"routerLink="/cars"> All Brands</li>
+  <li [class]="getAllBrandClass()" (click)="resetBrand()" routerLink="/cars"> All Brands</li>
   <li (click)="setCurrentBrand(brand)"
     routerLink="/cars/brand/{{brand.brandId}}"
     *ngFor="let brand of brands"

@@ -4,7 +4,7 @@
 
 <ul class="list-group">
   <th><font color="#FF33B8">Colors</font></th>
-  <li [class]="getAllColorClass()"routerLink="/cars"> All Colors</li>
+  <li [class]="getAllColorClass()" (click)="resetColor()" routerLink="/cars"> All Colors</li>
   <li
     (click)="setCurrentColor(color)"
     routerLink="/cars/color/{{color.colorId}}"

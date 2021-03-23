@@ -95,5 +95,4 @@ export class CarComponent implements OnInit {
       this.cardtos=response.data;
     })
   }
-
 }

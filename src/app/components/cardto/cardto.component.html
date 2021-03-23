@@ -1,21 +1,31 @@
 <div *ngIf="cardto" class="card mb-3">
-    <img src="https://localhost:44330/images/{{carimages[0].imagePath}}" class="card-img-top" alt="...">
-    <div  class="card-body">
-      <h5 class="card-title">{{cardto.brandName | uppercase}}</h5>
-      <p class="card-text">Daily Price: {{cardto.dailyPrice}} 
-        , Color: {{cardto.colorName}}
-      </p>
+  <img
+    src="https://localhost:44330/images/{{ carimages[0]?.imagePath }}"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ cardto.brandName | uppercase }}</h5>
+    <p class="card-text">
+      Daily Price: {{ cardto.dailyPrice }} , Color: {{ cardto.colorName }}
+    </p>
+    <div>
       <button
-      type="button"
-      class="btn btn-success"
-      style="position: absolute; bottom: 20px; right: 20px"
-      [routerLink]="['/rentcar',cardto.carId]"
-    >
-      Rent This Car
-    </button>
-      <p class="card-text"><small class="text-muted"></small></p>
+        type="button"
+        class="btn btn-success"
+        style="position: absolute; bottom: 20px; right: 20px"
+        [routerLink]="['/rentcar', cardto.carId]"
+      >
+        Rent This Car
+      </button>
+      <div>
+        <app-car-update></app-car-update>
+      </div>
     </div>
+
+    <p class="card-text"><small class="text-muted"></small></p>
   </div>
-<div *ngIf="dataLoaded==false" class="spinner-border text-info " role="status">
+</div>
+<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>

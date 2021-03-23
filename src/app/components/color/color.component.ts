@@ -55,4 +55,8 @@ export class ColorComponent implements OnInit {
     }
   }
 
+  resetColor(){
+    this.currentColor=null;
+  }
+
 }

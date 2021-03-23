@@ -67,16 +67,4 @@ export class RentcarComponent implements OnInit {
     let fark = this.bitisTarihi.getTime() - +this.baslangicTarihi.getTime();
     this.totalDay = fark / (1000 * 60 * 60 * 24);
   }
-  // calculateDate() {
-  //   var date1, date2;
-  //   //define two date object variables with dates inside it
-  //   date1 = new Date();
-  //   date2 = new Date();
-
-  //   //calculate time difference
-  //   var time_difference = date2.getTime() - date1.getTime();
-
-  //   //calculate days difference by dividing total milliseconds in a day
-  //   var days_difference = time_difference / (1000 * 60 * 60 * 24);
-  // }
 }
