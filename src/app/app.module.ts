@@ -30,6 +30,7 @@ import { ColorUpdateComponent } from './components/color/color-update/color-upda
 import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
 import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color/color-add/color-add.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { BrandAddComponent } from './components/brand/brand-add/brand-add.compon
     BrandListComponent,
     BrandUpdateComponent,
     BrandAddComponent,
+    ColorAddComponent,
   ],
   imports: [
     BrowserModule,

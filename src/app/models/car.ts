@@ -5,4 +5,5 @@ export interface Car{
     colorId: number;       
     modelYear:string;            
     dailyPrice:number;
+    description:string;
 }

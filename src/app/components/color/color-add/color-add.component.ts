@@ -6,9 +6,10 @@ import { ColorService } from 'src/app/services/color.service';
 @Component({
   selector: 'app-color-add',
   templateUrl: './color-add.component.html',
-  styleUrls: ['./color-add.component.css'],
+  styleUrls: ['./color-add.component.css']
 })
 export class ColorAddComponent implements OnInit {
+
   colorAddForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -48,4 +49,5 @@ export class ColorAddComponent implements OnInit {
       this.toastrService.error('Formunuz eksik', 'Lütfen kontrol ediniz!');
     }
   }
+
 }
