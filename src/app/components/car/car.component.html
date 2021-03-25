@@ -2,7 +2,7 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<div class="mb-3">
+<!-- <div class="mb-3">
   <label for="filterText" class="form-label">Search</label>
   <input
     type="text"
@@ -14,7 +14,7 @@
 </div>
 <div *ngIf="filterText" class="alert alert-success">
   You searched for {{filterText}}
-</div>
+</div> -->
 <div class="row">
   <div class="col-md-10">
     <app-brand-selectoption (outputValue)="getBrandId($event)"></app-brand-selectoption>
@@ -50,7 +50,7 @@
         <button
           type="button"
           routerLink="/cardetails/{{ carDto.carId }}"
-          class="btn btn-dark text-center"
+          class="btn btn-outline-success text-center"
         >
           Details
         </button>

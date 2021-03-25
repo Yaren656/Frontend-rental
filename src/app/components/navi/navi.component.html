@@ -1,36 +1,63 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/brands" >Update Brand</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/brands/add" >Add Brand</a>
-          </li>
-          <app-cart-summary></app-cart-summary>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/colors" >Update Color</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/colors/add" >Add Color</a>
-          </li>
+      </button> -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"
+            ><font color="#OOCDAC">Home</font></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/brands"
+            ><font color="#8A75FF">Update Brands</font></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/brands/add"
+            ><font color="#8A75FF">Add Brand</font></a
+          >
+        </li>
+        <app-cart-summary></app-cart-summary>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/colors"
+            ><font color="#FFABAB">Update Colors</font></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/colors/add"
+            ><font color="#FFABAB">Add Color</font></a
+          >
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/cars/add" >Add Car</a>
-          </li>
-        </ul>
-        <!-- <form class="d-flex ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/cars/add"
+            ><font color="#OO65A2">Add Car</font></a
+          >
+        </li>
+      </ul>
+
+      <!-- <div class="mb-3">
+        <label for="filterText" class="form-label"></label>
+        <input
+          type="text"
+          [(ngModel)]="filterText"
+          class="form-control"
+          id="filterText"
+          placeholder="Search"
+        />
+      </div>
+      <div *ngIf="filterText" class="alert alert-success">
+        You searched for {{ filterText }}
+      </div> -->
+
+      <!-- <form class="d-flex ml-auto">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form> -->
-      </div>
     </div>
-  </nav>
+  </div>
+</nav>

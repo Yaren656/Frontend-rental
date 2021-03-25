@@ -1,28 +1,46 @@
-
 <div *ngIf="cardto">
-  <h2>Araba bilgileri</h2>
-  <p>Marka {{cardto.brandName}}</p>
-  <p>Renk {{cardto.colorName}}</p>
-  <p>Günlük ücret {{cardto.dailyPrice}}</p>
-  <p>Açıklama {{cardto.description}}</p>
+  <div align="center">
+    <h5>Information About the Car</h5>
+  </div>
+  <p>Brand : {{ cardto.brandName }}</p>
+  <p>Color : {{ cardto.colorName }}</p>
+  <p>Daily Price : {{ cardto.dailyPrice }}</p>
+  <p>Decription : {{ cardto.description }}</p>
 </div>
 <div class="row">
   <div class="col-md-6">
-    Rent Start Date :
-    <input type="date" [min]="today" (input)="getStartDate($event)"/>
+    <p>
+      Rent Start Date :
+      <input type="date" [min]="today" (input)="getStartDate($event)" />
+    </p>
   </div>
   <div class="col-md-6">
-    Rent End Date :
-    <input [disabled]="!isRentDateSelected" type="date" [min]="endMinDate" (input)="getEndDate($event)"/>
+    <p>
+      Rent End Date :
+      <input
+        [disabled]="!isRentDateSelected"
+        type="date"
+        [min]="endMinDate"
+        (input)="getEndDate($event)"
+      />
+    </p>
   </div>
 </div>
 <div class="col-md-6">
-    <p>  Total Day: {{totalDay}}</p>
-      <p *ngIf="cardto"> Daily Price : {{cardto.dailyPrice}}</p>
-      <p> Total Price : <span *ngIf="totalDay"> {{totalDay*cardto.dailyPrice}}</span></p>
+  <p>Total Day: {{ totalDay }}</p>
+  <p *ngIf="cardto">Daily Price : {{ cardto.dailyPrice }}</p>
+  <p>
+    Total Price :
+    <span *ngIf="totalDay"> {{ totalDay * cardto.dailyPrice }}</span>
+  </p>
 </div>
-<button type="button" (click)="rent()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button
+  type="button"
+  (click)="rent()"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
   Rent
 </button>
 <app-creditcard rentals="rental"></app-creditcard>
-

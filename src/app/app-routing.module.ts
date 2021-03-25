@@ -9,6 +9,7 @@ import { CardtoComponent } from './components/cardto/cardto.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
 import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { CreditcardComponent } from './components/creditcard/creditcard.component';
+import { LoginComponent } from './components/login/login.component';
 import { RentcarComponent } from './components/rentcar/rentcar.component';
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'colors/add', component:ColorAddComponent },
   { path: 'brands/add', component:BrandAddComponent },
   { path: 'cars/add', component:CarAddComponent },
+  { path: 'login', component:LoginComponent },
 
 ];
 
