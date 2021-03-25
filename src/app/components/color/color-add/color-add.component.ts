@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
+
+//update işlemi de bu component içinde yapılmıştır.
 @Component({
   selector: 'app-color-add',
   templateUrl: './color-add.component.html',
