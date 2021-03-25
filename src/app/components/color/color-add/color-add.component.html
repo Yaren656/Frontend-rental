@@ -1,28 +1,53 @@
 <div class="content">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header"><h5 class="title">Add color</h5></div>
-        <div class="card-body">
-          <form [formGroup]="colorAddForm">
-            <div class="mb-3">
-              <label for="colorName">color Name</label>
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="colorName"
-                  formControlName="colorName"
-                  class="form-control"
-                  placeholder="colorName"
-                />
-              </div>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Add color</h5></div>
+      <div class="card-body">
+        <form [formGroup]="colorAddForm">
+          <div class="mb-3">
+            <label for="colorName">color Name</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="colorName"
+                formControlName="colorName"
+                class="form-control"
+                placeholder="colorName"
+              />
             </div>
-          </form>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
-        </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
       </div>
     </div>
   </div>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+      <th>Color Id</th>
+      <th>Color Name</th>
+      <th></th>
+  </thead>
+<tbody>
+  <tr *ngFor="let color of colors">
+      <td>{{color.colorId}}</td>
+      <td>{{color.colorName}}</td>
+      <td><button
+          type="button"
+          (click)="setChangedColor(color)"
+          class="btn btn-warning text-center"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Update
+        </button></td>
+  </tr>
   
-  
+</tbody>
+
+</table>
+
+<app-color-update [color]="changedColor" (updated)="getColors()"></app-color-update>

@@ -9,22 +9,22 @@ import { ColorService } from 'src/app/services/color.service';
 })
 export class ColorListComponent implements OnInit {
 
-  colors:Color[]=[];
-  changedColor!:Color;
+  // colors:Color[]=[];
+  // changedColor!:Color;
   constructor(private colorService:ColorService) { }
 
   ngOnInit(): void {
-    this.getColors();
+    // this.getColors();
   }
 
-  getColors(){
-    this.colorService.getColors().subscribe(response=>{
-      this.colors=response.data;
-    })
-  }
+  // getColors(){
+  //   this.colorService.getColors().subscribe(response=>{
+  //     this.colors=response.data;
+  //   })
+  // }
 
-  setChangedColor(color:Color){
-    this.changedColor=color;
-  }
+  // setChangedColor(color:Color){
+  //   this.changedColor=color;
+  // }
 
 }

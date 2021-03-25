@@ -12,6 +12,8 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandUpdateComponent implements OnInit {
   @Input() brand: Brand;
   @Output() updated = new EventEmitter();
+  // brands:Brand[]=[];
+  // changedBrand!:Brand;
   brandUpdateForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -25,6 +27,7 @@ export class BrandUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.createBrandUpdateForm();
+    // this.getBrands();
   }
 
   setFormValues() {
@@ -67,4 +70,14 @@ export class BrandUpdateComponent implements OnInit {
       brandName: ['', Validators.required],
     });
   }
+
+  // getBrands(){
+  //   this.brandService.getBrands().subscribe(response=>{
+  //     this.brands=response.data;
+  //   })
+  // }
+
+  // setChangedBrand(brand:Brand){
+  //   this.changedBrand=brand;
+  // }
 }

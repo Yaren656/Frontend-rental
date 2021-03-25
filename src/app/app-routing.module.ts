@@ -11,6 +11,7 @@ import { ColorListComponent } from './components/color/color-list/color-list.com
 import { CreditcardComponent } from './components/creditcard/creditcard.component';
 import { LoginComponent } from './components/login/login.component';
 import { RentcarComponent } from './components/rentcar/rentcar.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: CarComponent },
@@ -19,16 +20,31 @@ const routes: Routes = [
   { path: 'cars/color/:colorId', component: CarComponent },
   { path: 'cars/image/:carId', component: CarComponent },
   { path: 'cardetails/:carId', component: CardtoComponent },
-  { path: 'rentcar/:carId', component: RentcarComponent },
-  { path: 'payment', component:CreditcardComponent },
-  { path: 'cars/update', component:CarUpdateComponent },
-  { path: 'colors', component:ColorListComponent },
-  { path: 'brands', component:BrandListComponent },
-  { path: 'colors/add', component:ColorAddComponent },
-  { path: 'brands/add', component:BrandAddComponent },
-  { path: 'cars/add', component:CarAddComponent },
-  { path: 'login', component:LoginComponent },
-
+  {
+    path: 'rentcar/:carId',
+    component: RentcarComponent,
+    canActivate: [LoginGuard],
+  },
+  { path: 'payment', component: CreditcardComponent },
+  {
+    path: 'cars/update',
+    component: CarUpdateComponent,
+    canActivate: [LoginGuard],
+  },
+  { path: 'colors', component: ColorListComponent , canActivate: [LoginGuard]},
+  { path: 'brands', component: BrandListComponent , canActivate: [LoginGuard]},
+  {
+    path: 'colors/add',
+    component: ColorAddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'brands/add',
+    component: BrandAddComponent,
+    canActivate: [LoginGuard],
+  },
+  { path: 'cars/add', component: CarAddComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

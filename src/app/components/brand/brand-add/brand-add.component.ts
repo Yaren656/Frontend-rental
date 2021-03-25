@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandAddComponent implements OnInit {
   brandAddForm: FormGroup;
+  brands: Brand[] = [];
+  changedBrand!: Brand;
   constructor(
     private formBuilder: FormBuilder,
     private brandService: BrandService,
@@ -18,6 +21,7 @@ export class BrandAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.createBrandAddForm();
+    this.getBrands();
   }
 
   createBrandAddForm() {
@@ -47,5 +51,15 @@ export class BrandAddComponent implements OnInit {
     } else {
       this.toastrService.error('Formunuz eksik', 'Lütfen kontrol ediniz!');
     }
+  }
+
+  getBrands() {
+    this.brandService.getBrands().subscribe((response) => {
+      this.brands = response.data;
+    });
+  }
+
+  setChangedBrand(brand: Brand) {
+    this.changedBrand = brand;
   }
 }

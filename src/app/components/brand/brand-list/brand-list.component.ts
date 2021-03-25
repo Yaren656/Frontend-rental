@@ -9,22 +9,22 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandListComponent implements OnInit {
 
-  brands:Brand[]=[];
-  changedBrand!:Brand;
+  // brands:Brand[]=[];
+  // changedBrand!:Brand;
   constructor(private brandService:BrandService) { }
 
   ngOnInit(): void {
-    this.getBrands();
+    // this.getBrands();
   }
 
-  getBrands(){
-    this.brandService.getBrands().subscribe(response=>{
-      this.brands=response.data;
-    })
-  }
+  // getBrands(){
+  //   this.brandService.getBrands().subscribe(response=>{
+  //     this.brands=response.data;
+  //   })
+  // }
 
-  setChangedBrand(brand:Brand){
-    this.changedBrand=brand;
-  }
+  // setChangedBrand(brand:Brand){
+  //   this.changedBrand=brand;
+  // }
 
 }

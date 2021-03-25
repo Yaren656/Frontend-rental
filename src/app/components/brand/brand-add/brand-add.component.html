@@ -25,3 +25,33 @@
     </div>
   </div>
   
+  <table class="table table-bordered">
+    <thead>
+      <th>Brand Id</th>
+      <th>Brand Name</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.brandId }}</td>
+        <td>{{ brand.brandName }}</td>
+        <td>
+          <button
+            type="button"
+            (click)="setChangedBrand(brand)"
+            class="btn btn-warning text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <app-brand-update
+    [brand]="changedBrand"
+    (updated)="getBrands()"
+  ></app-brand-update>
+  

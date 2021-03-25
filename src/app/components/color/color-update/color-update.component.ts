@@ -21,17 +21,21 @@ export class ColorUpdateComponent implements OnInit, OnChanges {
   @Input() color: Color;
   @Output() updated = new EventEmitter();
   colorUpdateForm: FormGroup;
+  // colors: Color[] = [];
+  // changedColor!: Color;
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private colorService: ColorService
   ) {}
+
   ngOnChanges(changes: SimpleChanges): void {
     this.setFormValues();
   }
 
   ngOnInit(): void {
     this.createColorUpdateForm();
+    // this.getColors();
   }
 
   setFormValues() {
@@ -74,4 +78,14 @@ export class ColorUpdateComponent implements OnInit, OnChanges {
       colorName: ['', Validators.required],
     });
   }
+
+  // getColors() {
+  //   this.colorService.getColors().subscribe((response) => {
+  //     this.colors = response.data;
+  //   });
+  // }
+
+  // setChangedColor(color: Color) {
+  //   this.changedColor = color;
+  // }
 }
