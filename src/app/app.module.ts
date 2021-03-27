@@ -25,14 +25,13 @@ import { CreditcardComponent } from './components/creditcard/creditcard.componen
 import { RentcarComponent } from './components/rentcar/rentcar.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
-import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
-import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
 import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -54,13 +53,12 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     RentcarComponent,
     CarAddComponent,
     CarUpdateComponent,
-    ColorListComponent,
     ColorUpdateComponent,
-    BrandListComponent,
     BrandUpdateComponent,
     BrandAddComponent,
     ColorAddComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

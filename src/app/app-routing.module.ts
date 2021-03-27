@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
-import { BrandListComponent } from './components/brand/brand-list/brand-list.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { CarComponent } from './components/car/car.component';
 import { CardtoComponent } from './components/cardto/cardto.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
-import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { CreditcardComponent } from './components/creditcard/creditcard.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RentcarComponent } from './components/rentcar/rentcar.component';
 import { LoginGuard } from './guards/login.guard';
 
@@ -31,8 +30,8 @@ const routes: Routes = [
     component: CarUpdateComponent,
     canActivate: [LoginGuard],
   },
-  { path: 'colors', component: ColorListComponent , canActivate: [LoginGuard]},
-  { path: 'brands', component: BrandListComponent , canActivate: [LoginGuard]},
+  { path: 'colors', component: ColorAddComponent , canActivate: [LoginGuard]},
+  { path: 'brands', component: BrandAddComponent , canActivate: [LoginGuard]},
   {
     path: 'colors/add',
     component: ColorAddComponent,
@@ -45,6 +44,7 @@ const routes: Routes = [
   },
   { path: 'cars/add', component: CarAddComponent, canActivate: [LoginGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({

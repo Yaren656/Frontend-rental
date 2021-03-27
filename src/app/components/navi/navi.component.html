@@ -11,22 +11,12 @@
             ><font color="#OOCDAC">Home</font></a
           >
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link active" routerLink="/brands"
-            ><font color="#8A75FF">Update Brands</font></a
-          >
-        </li> -->
         <li class="nav-item">
           <a class="nav-link active" routerLink="/brands/add"
             ><font color="#8A75FF">Add & | OR Update Brand</font></a
           >
         </li>
-        <!-- <app-cart-summary></app-cart-summary>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/colors"
-            ><font color="#FFABAB">Update Colors</font></a
-          >
-        </li> -->
+        <!-- <app-cart-summary></app-cart-summary> -->
         <li class="nav-item">
           <a class="nav-link active" routerLink="/colors/add"
             ><font color="#FFABAB">Add & | OR Update Color</font></a
@@ -38,26 +28,25 @@
             ><font color="#OO65A2">Add Car</font></a
           >
         </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/login"
+            style="position: absolute; right: 100px"
+            ><font color="#OOCDAC">Login</font></a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/register"
+            style="position: absolute; right: 20px"
+            ><font color="#OOCDAC">Register</font></a
+          >
+        </li>
       </ul>
-
-      <!-- <div class="mb-3">
-        <label for="filterText" class="form-label"></label>
-        <input
-          type="text"
-          [(ngModel)]="filterText"
-          class="form-control"
-          id="filterText"
-          placeholder="Search"
-        />
-      </div>
-      <div *ngIf="filterText" class="alert alert-success">
-        You searched for {{ filterText }}
-      </div> -->
-
-      <!-- <form class="d-flex ml-auto">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
     </div>
   </div>
 </nav>
